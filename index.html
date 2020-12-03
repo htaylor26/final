@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lab 2</title>
+
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin=""/>
+
+        <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+        integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+        crossorigin=""></script>
+
+    </head>
+
+    <body>
+        <div id="map" style="height: 500px"></div>
+
+        <script type="text/javascript">
+
+          var map = L.map('map', {
+              center: [38.16, -96.96],
+              zoom: 4
+          });
+
+          L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+               attribution: '@ <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+               maxZoom: 4,
+               minZoom: 4
+            }).addTo(map);
+            var fireIcon = L.icon({
+                iconUrl: 'fire.png', // url that links to the icon image file
+                iconSize:     [32, 32], // size of the icon image in pixels
+                iconAnchor:   [19, 19], // the top left corner of the icon will be aligned so that this point is at the marker's geographical location
+                popupAnchor:  [0, -10] // point from which the popup should open, relative to the iconAnchor
+            });
+            var marker1 = L.marker([40.6,-105.9], {icon: fireIcon}).addTo(map);
+            var marker2 = L.marker([37.1,-119.4], {icon: fireIcon}).addTo(map);
+            var marker3 = L.marker([37.5,-91.2], {icon: fireIcon}).addTo(map);
+            var marker4 = L.marker([39.4,-82.1], {icon: fireIcon}).addTo(map);
+            var marker5 = L.marker([41.7,-103.4], {icon: fireIcon}).addTo(map);
+            var marker6 = L.marker([32.2,-100.7], {icon: fireIcon}).addTo(map);
+            var marker7 = L.marker([31.7,-110.7], {icon: fireIcon}).addTo(map);
+
+var pic1 = '<img src="https://ewscripps.brightspotcdn.com/dims4/default/5ad7c35/2147483647/strip/true/crop/2048x1152+0+384/resize/1280x720!/quality/90/?url=http%3A%2F%2Fewscripps-brightspot.s3.amazonaws.com%2F64%2F22%2Fbbd831ef4777923b508b777f2be4%2Fcameron-peak-fire-largest-in-state-history.jpg" alt="Cameron Peak CO" width="250">';
+var pic2 = '<img src="https://s.abcnews.com/images/US/creek-fire-01-ap-jef-200923_1600873577799_hpMain_16x9_992.jpg" alt="CA" width="250">';
+var pic3 = '<img src="https://bloximages.chicago2.vip.townnews.com/lakeexpo.com/content/tncms/assets/v3/editorial/1/72/172a43f4-116f-11eb-8fe6-6f0c42d5e291/5f8c883f40388.image.jpg" alt="MO" width="250">';
+var pic4 = '<img src="https://www.fs.usda.gov/Internet/FSE_MEDIA/fsm9_005125.jpg" alt="OH" width="250">';
+var pic5 = '<img src="https://media.ruralradio.co/wordpress/2020/08/Fire-two.jpg " alt="NE" width="250">';
+var pic6 = '<img src="https://media.ruralradio.co/wordpress/2020/08/Fire-two.jpg " alt="TX" width="250">';
+var pic7 = '<img src="https://d3kcsn1y1fg3m9.cloudfront.net/fire/incidents/7235-dd8bda92b05f04cfb0059acf95e521f6.jpeg " alt="AZ" width="250">';
+
+
+marker1.bindPopup('Cameron Peak Fire, Colorado' + '<br>'+ 'Burnt Area:	208,913 Acres'+'<br>' +pic1);
+marker2.bindPopup('Creek Fire, California'+ '<br>'+ 'Burnt Area: 379,895 Acres'+'<br>' +'<br>'+ 'Extra info:The Creek Fire is a large active wildfire which started on September 4, 2020 near Shaver Lake'  +pic2);
+marker3.bindPopup('Boardinghouse Hallow Fire, MO'+ '<br>'+ 'Burnt Area: 223.4 Acres'+'<br>' +'<br>'+ 'Extra info:This wildfire started in mid October 2020 '  +pic3);
+marker4.bindPopup('Wayne National Forest Fire, Ohio' + '<br>'+ 'Burnt Area:	32,671 Acres'+'<br>' +'<br>'+ 'Extra info: Seasonal fall wildfire ' +pic4);
+marker5.bindPopup('Hubbards Gap Fire, NE ' + '<br>'+ 'Burnt Area: 3,850 Acres'+'<br>' +pic5);
+marker6.bindPopup('Slade Fire, Texas ' + '<br>'+ 'Burnt Area: 4,898 Acres'+'<br>' +pic6);
+marker7.bindPopup('Encinos Fires, Arizona'+ '<br>'+ 'Burnt Area: 14,905 Acres'+'<br>' +'<br>'+ 'Extra info: Short grasses and bushes acted as fuel'  +pic7);
+        </script>
+   </body>
+</html>
